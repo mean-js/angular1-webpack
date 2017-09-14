@@ -1,6 +1,11 @@
 import angular from 'angular';
-import contollerFirst from './controller.first'
+
+import serviceHello from "./service.common";
+import contollerFirst from './controller.first';
+
 
 var app = angular.module("app", []);
 
-app.controller("first", ["$scope", contollerFirst]);
+
+app.service("common", [serviceHello]);
+app.controller("first", ["$scope", "common", contollerFirst]);
